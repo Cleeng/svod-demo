@@ -1,0 +1,16 @@
+<div class="row">
+    <?php if ($this->offerId != 'P852360119_NL'): ?>
+        <div class="col-md-offset-3 col-md-8" style="font-size: 22px; color: #333; padding-top: 60px;">Sign up to start your free month<br/>
+        <small style="font-size: 12px;">(pssst, get 100% discount by typing "<strong>discountForYou</strong>" into Redeem coupon field)</small>
+    <?php else: ?>
+        <div class="col-md-offset-3 col-md-8" style="font-size: 22px; color: #333; padding-top: 60px;">Sign up for your weekly pass<br/>
+        <small style="font-size: 12px;">(pssst, get 100% discount by typing "<strong>freeForYou</strong>" into Redeem coupon field)</small>
+    <?php endif; ?>
+    </div>
+    <div class="col-md-offset-3 col-md-6" style="height: 600px; padding-top: 50px;"
+         data-cleeng-container
+         data-action="checkout"
+         data-display-type="inline"
+         data-offer-id="<?php echo $this->offerId; ?>"
+         data-completed-callback="cleengCallbackHandler(result)"></div>
+</div>
