@@ -31,11 +31,8 @@ class PremiumContentAction
             return new RedirectResponse('/');
         }
 
-        $customer = $this->cleengApi->getCustomer();
-
         $data = [
             'layout' => 'layout::premium-content',
-            'customer' => $customer->displayName
         ];
 
         return new HtmlResponse($this->template->render('app::premium-content', $data));

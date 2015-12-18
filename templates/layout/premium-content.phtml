@@ -1,6 +1,3 @@
-<?php
-    $indexViewModel = $this->viewModel()->getCurrent()->getChildrenByCaptureTo('content')[0];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +15,6 @@
     ?>
 </head>
 <body>
-<!-- Fixed navbar -->2
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -36,7 +32,7 @@
                 <li>
                     <div class="btn-group">
                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hi <?php echo $indexViewModel->customer; ?> <span class="caret"></span>
+                            Hi <?php echo $this->getCleengCustomer()->displayName; ?> <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="/settings">Settings</a></li>
@@ -47,11 +43,9 @@
                 </li>
             </ul>
         </div>
-        <!--/.nav-collapse -->
     </div>
 </nav>
 
-<!-- Begin page content -->
 <div class="container-fluid">
     <?php echo $this->content ?>
 </div>
@@ -59,8 +53,9 @@
 <footer class="footer">
     <div class="container-fluid">
         <div class="row">
-            <img src="/images/thumb4.png" />
-            <img src="/images/thumb3.png" />
+            <img src="/images/thumb9.jpg" />
+            <img src="/images/thumb8.jpg" />
+            <img src="/images/thumb7.jpg" />
             <img src="/images/thumb2.png" />
             <img src="/images/thumb5.png" />
             <img src="/images/thumb6.png" />
@@ -88,5 +83,6 @@ echo $this->inlineScript();
         });
     })
 </script>
+<div id="darker"></div>
 </body>
 </html>

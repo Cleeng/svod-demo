@@ -15,36 +15,31 @@
     ?>
 </head>
 <body>
-<!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">MyBrand.tv</a>
+        <a class="navbar-brand" href="/">MyBrand.tv</a>
+        <div class="btn-group">
+            <?php if($this->getCleengCustomer()): ?>
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hi <?php echo $this->getCleengCustomer()->displayName; ?> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/select-plan">Start your FREE month</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            <?php else: ?>
+                <button class="btn btn-danger"
+                        data-cleeng-trigger
+                        data-action="authentication"
+                        data-display-type="overlay"
+                        data-publisher-id="120680532"
+                        data-completed-callback="cleengCallbackHandler(result)">Sign in</button>
+            <?php endif; ?>
         </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li>
-                    <button class="btn btn-danger"
-                         data-cleeng-trigger
-                         data-action="authentication"
-                         data-display-type="overlay"
-                         data-publisher-id="120680532"
-                         data-completed-callback="cleengCallbackHandler(result)">Sign in</div>
-                </li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
     </div>
 </nav>
 
-<!-- Begin page content -->
 <div class="container-fluid">
     <?php echo $this->content ?>
 </div>
@@ -52,19 +47,19 @@
 <footer class="footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-offset-1 col-md-3">
+            <div class="col-md-offset-1 col-sm-3">
                 <img src="https://assets.nflxext.com/ffe/siteui/acquisition/common/bullets/online_streaming_2.png" />
                 <p>
                     Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
                 <img src="https://assets.nflxext.com/ffe/siteui/acquisition/common/bullets/watch_on_devices_2.png" />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 </p>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-3">
                 <img src="https://assets.nflxext.com/ffe/siteui/acquisition/common/bullets/cancel_anytime_2.png" />
                 <p>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
@@ -89,11 +84,18 @@ echo $this->inlineScript();
                 if (accessStatus.accessGranted) {
                     window.location.href = '/premium-content';
                 } else {
-                    wi;
+                    window.location.href = '/';
                 }
             });
         }
     };
+    $('#logout').click(function() {
+        CleengApi.logout(function(result) {
+            if (result.success) {
+                location.reload();
+            }
+        });
+    })
 </script>
 </body>
 </html>

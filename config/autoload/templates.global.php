@@ -3,11 +3,9 @@
 return [
     'dependencies' => [
         'factories' => [
-            'Zend\Expressive\FinalHandler' =>
-                Zend\Expressive\Container\TemplatedErrorHandlerFactory::class,
-
-            Zend\Expressive\Template\TemplateRendererInterface::class =>
-                Zend\Expressive\ZendView\ZendViewRendererFactory::class,
+            'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\TemplatedErrorHandlerFactory::class,
+            Zend\Expressive\Template\TemplateRendererInterface::class => Zend\Expressive\ZendView\ZendViewRendererFactory::class,
+            Zend\View\HelperPluginManager::class => Zend\Expressive\ZendView\HelperPluginManagerFactory::class,
         ],
     ],
 
@@ -23,6 +21,12 @@ return [
             'app'    => ['templates/app'],
             'layout' => ['templates/layout'],
             'error'  => ['templates/error'],
+        ]
+    ],
+
+    'view_helpers' => [
+        'invokables' => [
+            'getCleengCustomer' => App\View\Helper\GetCleengCustomer::class
         ]
     ]
 ];

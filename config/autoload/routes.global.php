@@ -22,12 +22,6 @@ return [
             'allowed_methods' => ['GET'],
         ],
         [
-            'name' => 'api.ping',
-            'path' => '/api/ping',
-            'middleware' => App\Action\PingAction::class,
-            'allowed_methods' => ['GET'],
-        ],
-        [
             'name' => 'authenticate',
             'path' => '/authenticate',
             'middleware' => App\Action\AuthenticateAction::class,
