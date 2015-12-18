@@ -30,9 +30,11 @@ class SettingsAction
             return new RedirectResponse('/');
         }
 
+        $params = $request->getQueryParams();
+
         $data = [
             'layout' => 'layout::authenticate',
-//            'customer' => $customer->displayName
+            'mode' => !empty($params['mode']) ? $params['mode'] : 'profile'
         ];
 
         return new HtmlResponse($this->template->render('app::settings', $data));
