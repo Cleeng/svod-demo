@@ -11,7 +11,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 64px;
+    height: 153px;
     background-color: rgba(0,0,0,0.9);
     color: #ccc;
     overflow: hidden;
@@ -21,6 +21,10 @@ body {
     -o-transition: height 0.5s;
     transition: height 0.5s;
     cursor: pointer;
+}
+
+#premium-content .footer {
+    height: 64px;
 }
 
 .footer:hover {
