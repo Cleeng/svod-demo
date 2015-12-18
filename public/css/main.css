@@ -27,7 +27,7 @@ body {
     height: 64px;
 }
 
-.footer:hover {
+#premium-content .footer:hover {
     height: 153px;
 }
 

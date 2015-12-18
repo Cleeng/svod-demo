@@ -11,7 +11,7 @@
     <?php echo $this->headMeta(); ?>
     <?php echo $this->headLink()
         ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-        ->prependStylesheet('css/main.css?1')
+        ->prependStylesheet('css/main.css?2')
     ?>
 </head>
 <body>
@@ -23,7 +23,7 @@
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Hi <?php echo $this->getCleengCustomer()->displayName; ?> <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="/select-plan">Start your FREE month</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#" id="logout">Logout</a></li>
