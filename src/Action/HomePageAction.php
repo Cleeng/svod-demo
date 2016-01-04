@@ -3,7 +3,6 @@
 namespace App\Action;
 
 use Cleeng_Api;
-use Exception;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -26,12 +25,10 @@ class HomePageAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $data = [];
-
         if ($this->cleengApi->isAccessGranted('A764667811_NL')) {
             return new RedirectResponse('/premium-content');
         }
 
-        return new HtmlResponse($this->template->render('app::home-page', $data));
+        return new HtmlResponse($this->template->render('app::home-page', []));
     }
 }

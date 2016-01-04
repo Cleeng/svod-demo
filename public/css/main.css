@@ -39,6 +39,28 @@ body#authenticate > .container-fluid {
     padding: 0 15px;
 }
 
+.btn-danger {
+    color: #fff;
+    background-color: #67AC03 !important;
+    border-color: #67AC03 !important;
+}
+
+.tooltip.top {
+    margin-top: 50px !important;
+}
+
+.tooltip.top .tooltip-arrow {
+    display: none;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #67AC03 !important;
+}
+
+.tooltip .tooltip-inner {
+    background-color: #67AC03 !important;
+}
+
 .container-fluid .text-muted {
     margin: 20px 0;
 }
@@ -50,6 +72,43 @@ body#authenticate > .container-fluid {
 
 code {
     font-size: 80%;
+}
+
+#homepage-notification {
+    position: absolute;
+    top:-50px;
+    width: 100%;
+    text-align: center;
+    -moz-animation: cssAnimation 0.5s ease-in 2s forwards;
+    -webkit-animation: cssAnimation 0.5s ease-in 2s forwards;
+    -o-animation: cssAnimation 0.5s ease-in 2s forwards;
+    animation: cssAnimation 0.5s ease-in 2s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        top: 20px;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        top: 20px;
+    }
+}
+
+#homepage-notification span {
+    background-color: rgba(100,100,100,0.8);
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+    z-index: 9999;
+}
+
+#homepage-notification a {
+    color: white;
+    text-decoration: underline;
 }
 
 .navbar-default.navbar {
@@ -67,16 +126,20 @@ code {
     font-weight: bold;
     padding: 35px 0 0 26px;
     font-size: 54px;
-    color: #c9302c !important;
+    color: #67AC03 !important;
     margin-left: -15px;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #c9302c !important;
+    color: #67AC03 !important;
 }
 
 .navbar-right {
     padding-top: 30px;
+}
+
+.navbar-fixed-top .navbar-collapse {
+    border: none;
 }
 
 .footer > div > div > div > img {
@@ -181,5 +244,35 @@ code {
         position: relative;
         height: auto;
         margin-top: 50px;
+    }
+
+    #homepage-notification {
+        display: none;
+    }
+
+    .navbar-default.navbar-fixed-top
+    {
+        position: relative;
+        top: auto;
+    }
+
+    .navbar-header {
+        float: left;
+    }
+
+    .navbar-header .navbar-brand {
+        font-size: 40px;
+    }
+
+    .navbar-right {
+        padding: 20px 20px 0 0;
+        float: right;
+    }
+
+    .navbar-right .dropdown-menu {
+        right: 0 !important;
+        position: absolute !important;
+        background-color: #fff !important;
+        left: auto !important;
     }
 }

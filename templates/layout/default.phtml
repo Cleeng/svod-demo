@@ -15,6 +15,11 @@
     ?>
 </head>
 <body>
+<?php if($this->showHomePageNotification()): ?>
+    <div id="homepage-notification">
+        <span>This is a Cleeng SVOD demo website. <a href="https://cleeng.com/contact">Contact us</a>, or <a href="https://cleeng.com/open">develop your own</a>.</span>
+    </div>
+<?php endif; ?>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">MyBrand.tv</a>
@@ -78,6 +83,8 @@
 echo $this->inlineScript();
 ?>
 <script>
+    window.loggedIn = <?php echo json_encode((bool)$this->getCleengCustomer()); ?>;
+
     $.backstretch("/images/homepage_bg.jpg");
     function cleengCallbackHandler(result) {
         if (result.authorizationSuccessful) {
@@ -96,7 +103,12 @@ echo $this->inlineScript();
                 location.reload();
             }
         });
-    })
+    });
+    CleengApi.autologin(function(result) {
+        if (result.success && !window.loggedIn) {
+            location.reload();
+        }
+    });
 </script>
 </body>
 </html>

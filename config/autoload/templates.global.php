@@ -26,7 +26,8 @@ return [
 
     'view_helpers' => [
         'invokables' => [
-            'getCleengCustomer' => App\View\Helper\GetCleengCustomer::class
+            'getCleengCustomer' => App\View\Helper\GetCleengCustomer::class,
+            'showHomePageNotification' => App\View\Helper\ShowHomePageNotification::class
         ]
     ]
 ];

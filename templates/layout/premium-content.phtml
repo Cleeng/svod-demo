@@ -18,16 +18,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="/">MyBrand.tv</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
+        <div id="navbar" class="navbar-right">
             <ul class="nav navbar-nav">
                 <li>
                     <div class="btn-group">
@@ -54,13 +47,13 @@
 <footer class="footer">
     <div class="container-fluid">
         <div class="row">
-            <img src="/images/thumb9.jpg" />
-            <img src="/images/thumb8.jpg" />
-            <img src="/images/thumb7.jpg" />
-            <img src="/images/thumb2.png" />
-            <img src="/images/thumb5.png" />
-            <img src="/images/thumb6.png" />
-            <img src="/images/thumb1.png" />
+            <img src="/images/thumb9.jpg" class="tooltip-trigger"/>
+            <img src="/images/thumb8.jpg" class="tooltip-trigger"/>
+            <img src="/images/thumb7.jpg" class="tooltip-trigger"/>
+            <img src="/images/thumb2.png" class="tooltip-trigger"/>
+            <img src="/images/thumb5.png" class="tooltip-trigger"/>
+            <img src="/images/thumb6.png" class="tooltip-trigger"/>
+            <img src="/images/thumb1.png" class="tooltip-trigger"/>
         </div>
         </div>
     </div>
@@ -82,7 +75,20 @@ echo $this->inlineScript();
                 location.reload();
             }
         });
-    })
+    });
+
+    $(function () {
+        $('.tooltip-trigger').tooltip({
+            'trigger': 'click',
+            'title': "This is a demo.",
+        })
+    });
+
+    $(document).on('shown.bs.tooltip', function (e) {
+        setTimeout(function () {
+            $(e.target).tooltip('hide');
+        }, 1000);
+    });
 </script>
 <div id="darker"></div>
 </body>
