@@ -104,6 +104,16 @@ echo $this->inlineScript();
             }
         });
     });
+    $('#justAdemo a').click(function() {
+        $('#cleeng-tip').addClass('show');
+        $('#cleeng-tip h3').hide();
+        if ($(this).hasClass('pass')) {
+            $('#passDiscount').show();
+        } else {
+            $('#subscriptionDiscount').show();
+        }
+        $('#justAdemo').modal('hide')
+    });
     CleengApi.autologin(function(result) {
         if (result.success && !window.loggedIn) {
             location.reload();

@@ -4,7 +4,79 @@
         <div class="col-md-4" id="header">
             Watch TV shows & movies anytime, anywhere.
             <p>Plans from $7.99 a month</p>
-            <a href="/select-plan" class="btn btn-danger btn-lg">Start Your Free Month</a>
+            <a class="btn btn-danger btn-lg" data-toggle="modal" data-target="#justAdemo">Start Your Free Month</a>
         </div>
     </div>
+</div>
+<div class="modal fade" id="justAdemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="select-plan">
+                <h3>Choose the plan that's right for you:</h3>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sign up now, and get you free month!
+                <ul>
+                    <li>
+                        <div>
+                            <strong>Week Pass</strong><br/>
+                            Access for 7 days
+                        </div>
+                        <a class="btn btn-danger pass"
+                           data-cleeng-trigger
+                           data-action="checkout"
+                           data-display-type="overlay"
+                           data-offer-id="P852360119_NL"
+                           data-completed-callback="cleengCallbackHandler(result)">Select</a>
+                        <p class="price">$5.99</p>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Monthly Subscription</strong><br/>
+                            Access for whole month (<strong>FREE</strong> month included!)
+                        </div>
+                        <a class="btn btn-danger"
+                           data-cleeng-trigger
+                           data-action="checkout"
+                           data-display-type="overlay"
+                           data-offer-id="S359644062_NL"
+                           data-completed-callback="cleengCallbackHandler(result)">Select</a>
+                        <p class="price">$7.99</p>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>3-Month Subscription</strong><br/>
+                            Access for 3 months
+                        </div>
+                        <a class="btn btn-danger"
+                           data-cleeng-trigger
+                           data-action="checkout"
+                           data-display-type="overlay"
+                           data-offer-id="S661682819_NL"
+                           data-completed-callback="cleengCallbackHandler(result)">Select</a>
+                        <p class="price">$19.99</p>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Annual Subscription</strong><br/>
+                            Access for whole year!
+                        </div>
+                        <a class="btn btn-danger"
+                           data-cleeng-trigger
+                           data-action="checkout"
+                           data-display-type="overlay"
+                           data-offer-id="S164745395_NL"
+                           data-completed-callback="cleengCallbackHandler(result)">Select</a>
+                        <p class="price">$79.99</p>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cleeng-tip">
+    <span class="glyphicon glyphicon-remove"></span>
+    <h4>Hi there!</h4>
+    Because it is only a demo and we don't want you to pay for the access to fake movies, here you can find the 100% discount code. Use it during payment process:
+    <h3 id="passDiscount">discountForYou</h3>
+    <h3 id="subscriptionDiscount">freeForYou</h3>
 </div>
