@@ -82,12 +82,14 @@
 
 echo $this->inlineScript();
 ?>
-<div id="cleeng-tip">
-    <span class="glyphicon glyphicon-remove"></span>
-    <h4>Hi there!</h4>
-    Because it is only a demo and we don't want you to pay for the access to fake movies, here you can find the 100% discount code. Use it during payment process:
-    <h3 id="passDiscount">discountForYou</h3>
-    <h3 id="subscriptionDiscount">freeForYou</h3>
+<div id="cleeng-tip-holder">
+    <div id="cleeng-tip">
+        <span class="glyphicon glyphicon-remove"></span>
+        <h4>Hi there!</h4>
+        Because it is only a demo and we don't want you to pay for the access to fake movies, here you can find the 100% discount code. Use it during payment process:
+        <h3 id="passDiscount">discountForYou</h3>
+        <h3 id="subscriptionDiscount">freeForYou</h3>
+    </div>
 </div>
 <script>
     window.loggedIn = <?php echo json_encode((bool)$this->getCleengCustomer()); ?>;
@@ -103,7 +105,7 @@ echo $this->inlineScript();
                 }
             });
         }
-    };
+    }
     $('#logout').click(function() {
         CleengApi.logout(function(result) {
             if (result.success) {
@@ -120,6 +122,9 @@ echo $this->inlineScript();
             $('#subscriptionDiscount').show();
         }
         $('#justAdemo').modal('hide')
+    });
+    $('#cleeng-tip span').click(function() {
+        $('#cleeng-tip').removeClass('show');
     });
     CleengApi.autologin(function(result) {
         if (result.success && !window.loggedIn) {
