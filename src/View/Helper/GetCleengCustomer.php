@@ -14,7 +14,7 @@ class GetCleengCustomer extends AbstractHelper
 
         try {
             return $cleengApi->getCustomer();
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             return null;
         }
 
