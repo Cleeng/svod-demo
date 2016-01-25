@@ -121,6 +121,10 @@ code {
     margin-top: 31px;
 }
 
+.btn-group a {
+    cursor: pointer;
+}
+
 .navbar-default .navbar-brand {
     letter-spacing: -6px;
     font-weight: bold;
@@ -269,6 +273,10 @@ code {
 
 #cleeng-tip h3 {
     color: #67AC03;
+}
+
+.modal .modal-header {
+    border: none;
 }
 
 @media screen and (max-width: 768px) {
