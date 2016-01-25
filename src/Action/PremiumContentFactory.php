@@ -11,12 +11,10 @@ class PremiumContentFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        $router   = $container->get(RouterInterface::class);
-        $template = ($container->has(TemplateRendererInterface::class))
-            ? $container->get(TemplateRendererInterface::class)
-            : null;
-        $cleengApi = new Cleeng_Api();
-
-        return new PremiumContentAction($router, $template, $cleengApi);
+        return new PremiumContentAction(
+            $container->get(RouterInterface::class),
+            $container->get(TemplateRendererInterface::class),
+            new Cleeng_Api()
+        );
     }
 }

@@ -1,17 +1,21 @@
 {
-    "name": "zendframework/zend-expressive-skeleton",
+    "name": "cleeng/svod-demo",
     "type": "project",
     "homepage": "https://github.com/zendframework/zend-expressive-skeleton",
     "license": "BSD-3-CLAUSE",
     "authors": [
         {
             "name": "Tomasz Szadkowski",
-            "homepage": "http://svod-demo.cleeng.com"
+            "homepage": "http://cleeng.com"
+        },
+        {
+            "name": "Mateusz Tymek",
+            "homepage": "http://mateusztymek.pl"
         }
     ],
     "require": {
         "roave/security-advisories": "dev-master",
-        "zendframework/zend-expressive": "1.0.0rc4",
+        "zendframework/zend-expressive": "1.0.0rc5",
         "zendframework/zend-stdlib": "~2.7",
         "zendframework/zend-expressive-fastroute": "^1.0",
         "zendframework/zend-servicemanager": "^2.5",
@@ -33,6 +37,7 @@
         "test": [
             "php vendor/squizlabs/php_codesniffer/scripts/phpcs",
             "php vendor/phpunit/phpunit/phpunit"
-        ]
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
     }
 }

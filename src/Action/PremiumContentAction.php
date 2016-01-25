@@ -18,8 +18,11 @@ class PremiumContentAction
 
     private $template;
 
-    public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template = null, Cleeng_Api $cleengApi)
-    {
+    public function __construct(
+        Router\RouterInterface $router,
+        Template\TemplateRendererInterface $template,
+        Cleeng_Api $cleengApi
+    ) {
         $this->router   = $router;
         $this->template = $template;
         $this->cleengApi = $cleengApi;
