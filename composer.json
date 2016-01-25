@@ -15,13 +15,14 @@
     ],
     "require": {
         "roave/security-advisories": "dev-master",
-        "zendframework/zend-expressive": "1.0.0rc5",
+        "zendframework/zend-expressive": "1.0.0rc7",
         "zendframework/zend-stdlib": "~2.7",
         "zendframework/zend-expressive-fastroute": "^1.0",
         "zendframework/zend-servicemanager": "^2.5",
         "ocramius/proxy-manager": "^1.0",
         "zendframework/zend-expressive-zendviewrenderer": "^1.0",
-        "cleeng/cleeng-php-sdk": "dev-master"
+        "cleeng/cleeng-php-sdk": "dev-master",
+        "zendframework/zend-expressive-helpers": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
