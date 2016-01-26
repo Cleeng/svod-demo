@@ -10,7 +10,7 @@
     <title>SVOD Platform - Cleeng demo</title>
     <?php echo $this->headMeta(); ?>
     <?php echo $this->headLink()
-        ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
         ->prependStylesheet('css/main.css?2')
     ?>
 </head>
@@ -58,39 +58,6 @@
         </div>
     </div>
 </footer>
-<?php echo $this->headScript()
-    ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
-    ->prependFile('http://cdn.cleeng.com/js-api/3.0/api.js')
-    ->prependFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
-    ->prependFile('https://code.jquery.com/jquery-2.1.4.min.js');
-
-echo $this->inlineScript();
-?>
-<script>
-    $.backstretch("/images/homepage_bg.jpg");
-
-    $('#logout').click(function() {
-        CleengApi.logout(function(result) {
-            if (result.success) {
-                location.reload();
-            }
-        });
-    });
-
-    $(function () {
-        $('.tooltip-trigger').tooltip({
-            'trigger': 'click',
-            'title': "This is a demo.",
-        })
-    });
-
-    $(document).on('shown.bs.tooltip', function (e) {
-        setTimeout(function () {
-            $(e.target).tooltip('hide');
-        }, 1000);
-    });
-</script>
-<div id="darker"></div>
 <div class="modal fade" id="profile" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -115,5 +82,34 @@ echo $this->inlineScript();
         </div>
     </div>
 </div>
+<?php echo $this->headScript()
+    ->prependFile('http://cdn.cleeng.com/js-api/3.0/api.js')
+    ->prependFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    ->prependFile('https://code.jquery.com/jquery-2.1.4.min.js');
+
+?>
+<script>
+    $('#logout').click(function() {
+        CleengApi.logout(function(result) {
+            if (result.success) {
+                location.reload();
+            }
+        });
+    });
+
+    $(function () {
+        $('.tooltip-trigger').tooltip({
+            'trigger': 'click',
+            'title': "This is a demo.",
+        })
+    });
+
+    $(document).on('shown.bs.tooltip', function (e) {
+        setTimeout(function () {
+            $(e.target).tooltip('hide');
+        }, 1000);
+    });
+</script>
+<div id="darker"></div>
 </body>
 </html>

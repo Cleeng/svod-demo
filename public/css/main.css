@@ -5,7 +5,8 @@ html {
 body {
     margin-bottom: 153px;
     color: white;
-    /*background-color: #f4f4f4 !important;*/
+    background: url("../images/homepage_bg.jpg") center center no-repeat;
+    background-size: cover;
 }
 .footer {
     position: absolute;
@@ -43,6 +44,7 @@ body#authenticate > .container-fluid {
     color: #fff;
     background-color: #67AC03 !important;
     border-color: #67AC03 !important;
+    margin: 5px 0;
 }
 
 .tooltip.top {
@@ -286,6 +288,11 @@ code {
 
 .modal .modal-header {
     border: none;
+}
+
+#arr-logo {
+    width: 400px;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {
