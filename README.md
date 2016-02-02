@@ -1,6 +1,8 @@
 ## Getting Started
 
-First clone Cleeng SVOD demo project. You have to ways: by git or download compressed package.
+First clone Cleeng SVOD demo project. 
+
+You have two ways, by git: 
 
 ```bash
 $ git clone https://github.com/sq3hll/svod-demo.git path-to-project
@@ -10,7 +12,6 @@ Or download compressed package by pushing button “Download ZIP”.
 Next go to the project path, and install dependencies by composer .
 
 If you don't have composer, install it locally by:
-
 
 ```bash
 $ curl -sS https://getcomposer.org/installer | php
