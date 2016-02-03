@@ -16,6 +16,7 @@ class HomePageFactory
             ? $container->get(TemplateRendererInterface::class)
             : null;
         $cleengApi = new Cleeng_Api();
+        $cleengApi->enableSandbox();
 
         return new HomePageAction($router, $template, $cleengApi);
     }

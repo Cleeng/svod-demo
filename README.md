@@ -5,7 +5,7 @@ First clone Cleeng SVOD demo project.
 You have two ways, by git: 
 
 ```bash
-$ git clone https://github.com/sq3hll/svod-demo.git path-to-project
+$ https://github.com/Cleeng/svod-demo.git
 ```
 Or download compressed package by pushing button “Download ZIP”.
 
@@ -22,7 +22,7 @@ or globally by:
 $ curl -sS https://getcomposer.org/installer | php
 $ mv composer.phar /usr/local/bin/composer
 ```
-Eventually use instruction :  https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
+Eventually use instruction : https://getcomposer.org/doc/00-intro.md 
 
 Install all dependencies by composer installed locally:
 
