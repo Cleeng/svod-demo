@@ -24,6 +24,7 @@ class HomePageAction
         $this->router   = $router;
         $this->template = $template;
         $this->cleengApi = $cleengApi;
+        $this->cleengApi->enableSandbox();
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
