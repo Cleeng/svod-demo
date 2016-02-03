@@ -5,7 +5,7 @@ First clone Cleeng SVOD demo project.
 You have two ways, by git: 
 
 ```bash
-$ https://github.com/Cleeng/svod-demo.git
+$ git clone https://github.com/Cleeng/svod-demo.git path-to-project
 ```
 Or download compressed package by pushing button “Download ZIP”.
 
