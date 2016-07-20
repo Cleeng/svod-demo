@@ -95,6 +95,7 @@ echo $this->inlineScript();
     window.loggedIn = <?php echo json_encode((bool)$this->getCleengCustomer()); ?>;
 
     $.backstretch("/images/homepage_bg.jpg");
+
     function cleengCallbackHandler(result) {
         if (result.authorizationSuccessful) {
             CleengApi.getAccessStatus('A764667811_NL', function (accessStatus) {
