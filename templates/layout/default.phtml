@@ -22,7 +22,9 @@
 <?php endif; ?>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">MyBrand.tv</a>
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo2.png" />
+        </a>
         <div class="btn-group">
             <?php if($this->getCleengCustomer()): ?>
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,7 +96,7 @@ echo $this->inlineScript();
 <script>
     window.loggedIn = <?php echo json_encode((bool)$this->getCleengCustomer()); ?>;
 
-    $.backstretch("/images/homepage_bg.jpg");
+    $.backstretch("/images/bg.jpg");
 
     function cleengCallbackHandler(result) {
         if (result.authorizationSuccessful) {
